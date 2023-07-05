@@ -2,11 +2,11 @@
     "PinkSweater":
     {
         "Id":"Pink Sweater",
-        "Price": "$18"
+        "Price": 18
     },
     "WhiteShoes":
     {
         "Id":"White Shoes",
-        "Price": "$30"
+        "Price": 30
     }
   }

@@ -32,6 +32,6 @@ describe('Online Shop section', ()=> {
       shoppingCartPage.GetInShoppingCartSection();
       shoppingCartPage.ProductsVerification(Products.PinkSweater.Id,Products.PinkSweater.Price);
       shoppingCartPage.ProductsVerification(Products.WhiteShoes.Id,Products.WhiteShoes.Price);
-      shoppingCartPage.TotalToPayVerification();  
-    })
-})
+      shoppingCartPage.TotalToPayVerification(Products.PinkSweater.Price,Products.WhiteShoes.Price);
+    });
+});

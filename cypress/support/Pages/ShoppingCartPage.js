@@ -5,11 +5,11 @@ export class ShoppingCartPage {
     }
     
     ProductsVerification(Product,Price){
-        cy.contains(Product).should('have.text',Product).siblings('p').eq(1).should('have.text',Price);
+        cy.contains(Product).should('have.text',Product).siblings('p').eq(1).should('contain',Price);
     };
 
-    TotalToPayVerification(){
+    TotalToPayVerification(Price1,Price2){
         cy.xpath("//button[contains(text(),'Show total price')]").click();
-        cy.get('#price > b').should('contain',48)
+        cy.get('#price > b').should('contain',Price1+Price2)
     };
 }
