@@ -12,4 +12,8 @@ export class ShoppingCartPage {
         cy.xpath("//button[contains(text(),'Show total price')]").click();
         cy.get('#price > b').should('contain',Price1+Price2)
     };
+
+    ClickOnCheckoutButton(){
+        cy.contains('button','Go to Checkout').click()
+    }
 }

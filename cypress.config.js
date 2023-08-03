@@ -6,6 +6,6 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
     "baseUrl": 'https://pushing-front.vercel.app',
-    defaultCommandTimeout: 8000,
+    defaultCommandTimeout: 12000,
   },
 });

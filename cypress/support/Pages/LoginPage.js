@@ -1,18 +1,32 @@
 export class LoginPage {
 
-    ClickOnLogin(){
-        cy.get('#registertoggle').dblclick();
+    CreateUser(){
+        cy.request(
+            'POST',
+            'https://pushing-it.onrender.com/api/register',
+        {   username: 'FlorenciaMarquez',
+            password:'123456!',
+            gender:'Female',
+            day:'16',
+            month:'july',
+            year:'1990'  
+        }).then((response) => {
+            expect(response.status).to.equal(200)
+        });
     };
 
-    EnterUser(user){
-        cy.get('#user').type(user);
-    };
+    LoginWithNewUser(){
+        cy.request(
+            'POST',
+            'https://pushing-it.onrender.com/api/login',
+            {
+            username: 'FlorenciaMarquez',
+            password:'123456!'
+            }).then((response) => {
+                expect(response.status).to.equal(200)
+                window.localStorage.setItem('token',response.body.token)
+                window.localStorage.setItem('user',response.body.user.username)});
+                cy.visit('');
 
-    EnterPassword(pass){
-        cy.get('#pass').type(pass);
     };
-
-    ClickLoginBtn(){
-        cy.get('#submitForm').click();
-    };
-}
+};
